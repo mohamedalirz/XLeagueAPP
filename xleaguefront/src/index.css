@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-dark-bg to-dark-surface text-white font-inter;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .card-gradient {
+    @apply bg-gradient-to-br from-dark-card to-dark-card-hover;
+  }
+  
+  .neon-border {
+    @apply border border-neon-green/30 hover:border-neon-green/60 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-neon-green text-dark-bg font-semibold py-2 px-6 rounded-lg hover:bg-neon-green/80 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-card border border-neon-green/50 text-neon-green font-semibold py-2 px-6 rounded-lg hover:bg-neon-green/10 transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 bg-dark-surface border border-gray-700 rounded-lg focus:outline-none focus:border-neon-green text-white transition-all duration-300;
+  }
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
